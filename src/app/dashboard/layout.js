@@ -1,37 +1,75 @@
-// src/app/dashboard/layout.js
+"use client";
 
-import Link from "next/link";
+import Link from "next/link"; // Import Link here
+import { useState } from "react";
+import { FaBars, FaUserCircle, FaRecycle, FaSignOutAlt } from "react-icons/fa";
+import ProfileUpdate from "./profile/page"; // Import the ProfileUpdate component
 
-export default function DashboardLayout({ children }) {
+export default function RootLayout({ children }) {
+  const [role, setRole] = useState("producer"); // Change to "recycler" for testing
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true); // For the resizable sidebar
+  const [isEditingProfile, setIsEditingProfile] = useState(false); // State to toggle profile edit form
+
+  const handleLogout = () => {
+    // Implement logout logic here
+  };
+
+  const handleProfileUpdate = (updatedProfile) => {
+    // Handle the updated profile data (e.g., send to API)
+    console.log(updatedProfile);
+    setIsEditingProfile(false); // Close the profile update form after submission
+  };
+
   return (
-    <div className="flex min-h-screen bg-gray-100 mt-10">
+    <div className="flex min-h-screen bg-gray-100 mt-16">
       {/* Sidebar */}
-      <aside className="w-64 bg-white shadow-md p-6">
-        <Link href="/dashboard" className="text-2xl font-bold mb-4">Dashboard</Link>
-       
-        <nav className="flex flex-col space-y-2">
-          <Link href="/dashboard/overview" className="text-gray-800 hover:text-blue-500">
-            Overview
-          </Link>
-          <Link href="/dashboard/pickups" className="text-gray-800 hover:text-blue-500">
-            Pickups
-          </Link>
-          <Link href="/dashboard/profile" className="text-gray-800 hover:text-blue-500">
-            Profile
-          </Link>
-          <Link href="/dashboard/settings" className="text-gray-800 hover:text-blue-500">
-            Settings
-          </Link>
-          <Link href="/dashboard/logout" className="text-red-500 hover:text-red-600">
-            Logout
-          </Link>
-        </nav>
+      <aside
+        className={`${
+          isSidebarOpen ? "w-64" : "w-20"
+        } bg-blue-800 p-4 text-white transition-width duration-300 ease-in-out`}
+      >
+        <button
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          className="text-xl mb-4 block focus:outline-none"
+        >
+          <FaBars />
+        </button>
+        <div className="flex flex-col items-center space-y-4">
+          <FaUserCircle className="text-4xl" />
+          {isSidebarOpen && (
+            <div className="text-center">
+              <h2 className="text-lg font-semibold">Profile</h2>
+              <p>John Doe</p>
+            </div>
+          )}
+          <nav className="flex flex-col items-center space-y-4 mt-6">
+            <Link href="/" className="flex items-center space-x-2">
+              <FaRecycle />
+              {isSidebarOpen && <span>Dashboard</span>}
+            </Link>
+            <button
+              onClick={() => setIsEditingProfile(!isEditingProfile)}
+              className="flex items-center space-x-2"
+            >
+              <FaUserCircle />
+              {isSidebarOpen && <span>Edit Profile</span>}
+            </button>
+            <button onClick={handleLogout} className="flex items-center space-x-2 mt-10">
+              <FaSignOutAlt />
+              {isSidebarOpen && <span>Logout</span>}
+            </button>
+          </nav>
+        </div>
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 p-8">
-        {children}
-      </main>
+      <div className="flex-1 p-6">
+        {/* Show Profile Update Form */}
+        {isEditingProfile && <ProfileUpdate onUpdate={handleProfileUpdate} />}
+        <main>{children}</main>
+
+        {/* Your existing dashboard content goes here... */}
+      </div>
     </div>
   );
 }
