@@ -35,15 +35,15 @@ const Signup = () => {
         <div 
             className="min-h-screen flex items-center justify-center bg-cover bg-center relative"
             style={{
-                backgroundImage: `url('signupimage.webp')`,
+                backgroundImage: `url('')`,
             }}
                 >
             {/* Overlay for Background */}
-            <div className="absolute inset-0 bg-black opacity-70"></div>
+            
 
             {/* Centered Form */}
-            <div className="relative z-10 w-full max-w-md bg-gray-800 bg-opacity-90 p-8 rounded-lg shadow-lg text-white mt-16">
-                <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="relative z-10 w-full max-w-md  bg-opacity-90 p-8 rounded-lg shadow-lg text-white ">
+                <form onSubmit={handleSubmit} className="space-y-6 bg-gray-800 p-6 rounded-lg shadow-lg mt-10">
                     <h1 className="text-4xl font-bold text-center">Sign Up</h1>
                     {error && <p className="text-red-500">{error}</p>}
 

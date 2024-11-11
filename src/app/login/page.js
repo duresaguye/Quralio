@@ -28,7 +28,7 @@ const Login = () => {
 
     return (
         <div className="min-h-screen bg-white text-white flex items-center justify-center">
-            <div className="container mx-auto p-4 max-w-md">
+            <div  className="relative z-10 w-full max-w-md  bg-opacity-90 p-8 rounded-lg shadow-lg text-white ">
                
                 <form onSubmit={handleSubmit} className="space-y-6 bg-gray-800 p-6 rounded-lg shadow-lg mt-10">
                     {error && <p className="text-red-500">{error}</p>}
