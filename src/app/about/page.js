@@ -1,129 +1,139 @@
 'use client';
 
-import React from 'react';
-import { Typography, Grid, Container, Button, Card, CardContent, Box, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import { CheckCircleOutline } from '@mui/icons-material';
+import React, { useState } from 'react';
+import { Card, CardContent, CardMedia, Typography, Grid, Container, Button, Collapse, Box } from '@mui/material';
 
-const services = [
+
+const teamMembers = [
     {
-        name: 'Service A',
-        description: 'Detailed description about Service A, including its benefits and how it addresses customer needs.',
-        features: [
-            'Feature 1: Describes how Service A stands out.',
-            'Feature 2: Highlights customer benefits.',
-            'Feature 3: Shows problem-solving capabilities.'
-        ],
-        cta: 'Learn More',
-        testimonial: '“Service A has transformed our business. Highly recommended!” – Customer Name'
+        name: 'Duresa Guye',
+        role: 'Founder & CEO',
+        image: '/assets/dure_photo.jpg',
+        responsibilities: [
+            'Leads company vision, strategy, and decision-making.',
+            'Acts as the spokesperson, drives investor relations, and connects with stakeholders.',
+            'Works closely with other team members to align on goals and objectives.'
+        ]
     },
     {
-        name: 'Service B',
-        description: 'An overview of Service B, focused on its unique value propositions.',
-        features: [
-            'Feature 1: Easy to integrate with existing systems.',
-            'Feature 2: Increases efficiency and productivity.',
-            'Feature 3: Supported by excellent customer service.'
-        ],
-        cta: 'Discover Service B',
-        testimonial: '“With Service B, we’ve achieved seamless growth.” – Customer Name'
+        name: 'Alpha Lencho',
+        role: 'Chief Operations Officer',
+        image: '/assets/alpha_photo.jpg',
+        responsibilities: [
+            'Oversees daily operations, project management, and processes.',
+            'Ensures smooth execution of internal activities and coordinates between teams.',
+            'Handles HR functions (team culture, hiring, performance) if no dedicated HR role exists.'
+        ]
     },
     {
-        name: 'Service C',
-        description: 'Service C’s advantages and how it simplifies complex processes for customers.',
-        features: [
-            'Feature 1: Highly customizable.',
-            'Feature 2: Offers real-time data insights.',
-            'Feature 3: Reduces operational costs.'
-        ],
-        cta: 'Get Started',
-        testimonial: '“Service C made a significant impact on our efficiency.” – Customer Name'
+        name: 'Tolosa Diriba',
+        role: 'Chief Technology Officer',
+        image: '/assets/tolosa_photo.jpg',
+        responsibilities: [
+            'Leads product development, technology choices, and technical strategy.',
+            'Manages engineering tasks, codebase, and technical problem-solving.',
+            'Coordinates with Product/Design for product development.'
+        ]
+    },
+    {
+        name: 'Ruth Adane',
+        role: 'Product Manager / UX Designer',
+        image: '/assets/ruth_photo.jpg',
+        responsibilities: [
+            'Defines product roadmap, feature prioritization, and user journey.',
+            'Focuses on customer feedback, user experience, and interface design.',
+            'Works with the CTO and developers to turn product vision into reality.'
+        ]
+    },
+    {
+        name: 'Hilina Adane',
+        role: 'Marketing and Growth Lead',
+        image: '/assets/hilina_photo.jpg',
+        responsibilities: [
+            'Drives brand building, marketing campaigns, and customer acquisition.',
+            'Manages digital presence (social media, content, ads) and community engagement.',
+            'Gathers customer insights to support product and business strategies.'
+        ]
+    },
+    {
+        name: 'Mohammed Ahmed',
+        role: 'Finance & Customer Success Lead',
+        image: '/assets/mohammed_photo.jpg',
+        responsibilities: [
+            'Manages finances, budgets, and any fundraising activities.',
+            'Handles customer support, onboarding, and relationship management to ensure user satisfaction.',
+            'Collects feedback and works with the Product Manager to improve the customer journey.'
+        ]
     }
 ];
 
-const ServicePage = () => {
+const About = () => {
+    const [openIndex, setOpenIndex] = useState(null); // Track which team member's responsibilities are open
+
+    const handleToggle = (index) => {
+        setOpenIndex(openIndex === index ? null : index); // Toggle between opening and closing
+    };
+
     return (
         <Container sx={{ py: 8, backgroundColor: '#f9f9f9' }}>
             <Typography variant="h4" align="center" gutterBottom>
-                Our Services
+                About Us
             </Typography>
             <Typography variant="body1" align="center" paragraph sx={{ mb: 4 }}>
-                Quralio offers a range of services designed to optimize your experience. Explore our services to find the perfect solution for your needs.
+                We are a dedicated team committed to solving the challenges of recycling materials. Our mission is to create sustainable solutions that benefit both the environment and the community.
             </Typography>
-
-            <Grid container spacing={4}>
-                {services.map((service, index) => (
-                    <Grid item xs={12} md={6} lg={4} key={index}>
-                        <Card sx={{ boxShadow: 3, p: 2, height: '100%' }}>
+            <Grid container spacing={4} justifyContent="center">
+                {teamMembers.map((member, index) => (
+                    <Grid item xs={12} sm={6} md={4} key={index}>
+                        <Card sx={{ maxWidth: 345, mx: 'auto', boxShadow: 3 }}>
+                            <CardMedia
+                                component="img"
+                                alt={member.name}
+                                height="200"
+                                image={member.image}
+                                sx={{ objectFit: 'cover' }}
+                            />
                             <CardContent>
-                                <Typography variant="h5" sx={{ fontWeight: 'bold' }} gutterBottom>
-                                    {service.name}
+                                <Typography variant="h6" align="center" sx={{ fontWeight: 'bold' }}>
+                                    {member.name}
                                 </Typography>
-                                <Typography variant="body2" color="textSecondary" paragraph>
-                                    {service.description}
+                                <Typography variant="body2" color="textSecondary" align="center">
+                                    {member.role}
                                 </Typography>
-
-                                <Typography variant="subtitle1" sx={{ mt: 2, fontWeight: 'bold' }}>
-                                    Key Features:
-                                </Typography>
-                                <List dense>
-                                    {service.features.map((feature, idx) => (
-                                        <ListItem key={idx} disableGutters>
-                                            <ListItemIcon>
-                                                <CheckCircleOutline color="primary" />
-                                            </ListItemIcon>
-                                            <ListItemText primary={feature} />
-                                        </ListItem>
-                                    ))}
-                                </List>
-
-                                {/* Testimonial Section */}
-                                <Typography variant="body2" color="textSecondary" sx={{ mt: 2, fontStyle: 'italic' }}>
-                                    {service.testimonial}
-                                </Typography>
-
-                                {/* Call to Action Button */}
-                                <Button variant="contained" color="primary" fullWidth sx={{ mt: 3 }}>
-                                    {service.cta}
-                                </Button>
                             </CardContent>
+                            {/* Button for toggling the role details */}
+                            <Button
+                                onClick={() => handleToggle(index)}
+                                sx={{ width: '100%' }}
+                            >
+                                Role ↓
+                            </Button>
+                            
+                            <Collapse in={openIndex === index}>
+                                    <Box sx={{ mt: 2 }}>
+                                        {member.responsibilities.map((responsibility, idx) => (
+                                            <Box 
+                                                key={idx} 
+                                                sx={{
+                                                    backgroundColor: '#e3f2fd', 
+                                                    padding: '10px', 
+                                                    marginBottom: '8px', 
+                                                    borderRadius: '4px', 
+                                                    boxShadow: 2
+                                                }}
+                                            >
+                                                <Typography variant="body2">{responsibility}</Typography>
+                                            </Box>
+                                        ))}
+                                    </Box>
+                                </Collapse>
+
                         </Card>
                     </Grid>
                 ))}
             </Grid>
-
-            {/* FAQ Section */}
-            <Box sx={{ mt: 8 }}>
-                <Typography variant="h5" align="center" sx={{ fontWeight: 'bold' }} gutterBottom>
-                    Frequently Asked Questions
-                </Typography>
-                <Typography variant="body2" align="center" color="textSecondary" paragraph>
-                    Have questions about our services? We’ve got answers.
-                </Typography>
-                {/* Example FAQ Content */}
-                <Box sx={{ mt: 4 }}>
-                    <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>What is Quralio’s primary service?</Typography>
-                    <Typography variant="body2" color="textSecondary" paragraph>
-                        Our primary service is providing comprehensive solutions for recycling and waste management tailored to modern needs.
-                    </Typography>
-
-                    <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>How can I get started with a service?</Typography>
-                    <Typography variant="body2" color="textSecondary" paragraph>
-                        Each service has a "Learn More" or "Get Started" button. Simply click to explore or begin.
-                    </Typography>
-                </Box>
-            </Box>
-
-            {/* Contact Section */}
-            <Box sx={{ mt: 8, textAlign: 'center' }}>
-                <Typography variant="h5" sx={{ fontWeight: 'bold' }} gutterBottom>
-                    Get in Touch
-                </Typography>
-                <Typography variant="body2" color="textSecondary" paragraph>
-                    For inquiries or to learn more, contact us at <a href="mailto:info@quralio.com">info@quralio.com</a> or call us at +123-456-7890.
-                </Typography>
-            </Box>
         </Container>
     );
 };
 
-export default ServicePage;
+export default About;
