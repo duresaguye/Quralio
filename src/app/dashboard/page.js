@@ -4,7 +4,6 @@ import { useState } from "react";
 import { FaBars, FaUserCircle, FaTrash, FaRecycle, FaSignOutAlt } from "react-icons/fa";
 import RequestPickup from "./requestPickup/page";
 
-
 export default function Dashboard() {
   const [role, setRole] = useState("producer"); // Change to "recycler" for testing
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); // For the resizable sidebar
@@ -35,7 +34,7 @@ export default function Dashboard() {
 
   return (
     <div className="flex min-h-screen bg-gray-100">
-      <div className="flex-1 p-6">
+      <div className="">
         <h3 className="text-2xl font-bold mb-6">Dashboard</h3>
 
         {/* Plastic Waste Producer Dashboard */}
@@ -66,11 +65,6 @@ export default function Dashboard() {
               <p>Your total plastic collected: <strong>200 kg</strong></p>
               <p>Last contribution: <strong>50 kg</strong> on October 20th</p>
             </div>
-              {isRequestingPickup && (
-              <div className="col-span-2">
-                <RequestPickup onRequest={handlePickupRequest} />
-              </div>
-            )}
 
             <button
               onClick={() => setIsRequestingPickup(true)}
@@ -79,7 +73,11 @@ export default function Dashboard() {
               Request Pickup
             </button>
 
-          
+            {isRequestingPickup && (
+              <div className="col-span-2">
+                <RequestPickup onRequest={handlePickupRequest} />
+              </div>
+            )}
           </div>
         )}
 

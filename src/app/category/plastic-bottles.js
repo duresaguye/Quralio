@@ -3,7 +3,7 @@ import Layout from '../../components/Layout';
 
 export default function PlasticBottles() {
   return (
-    <Layout>
+
       <div className="container mx-auto p-4">
         <h1 className="text-3xl font-bold mb-4">Plastic Bottles</h1>
         <article>
@@ -31,6 +31,6 @@ export default function PlasticBottles() {
           </p>
         </article>
       </div>
-    </Layout>
+
   );
 }

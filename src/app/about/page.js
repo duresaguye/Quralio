@@ -124,16 +124,16 @@ const About = () => {
     };
 
     return (
-        <Container sx={{ py: 8, backgroundColor: '#f9f9f9' }}>
+        <Container sx={{backgroundColor: '#f9f9f9' }}>
             {/* Mission Section */}
             <Box sx={{ py: 4, backgroundColor: '#f9f9f9' }}>
-                <Typography variant="h4" align="center" gutterBottom color='#4a1e3d' fontWeight='bold'>
+                <Typography variant="h4" align="center" gutterBottom color='#111827' fontWeight='bold'>
                     Our Mission
                 </Typography>
                 <Grid container spacing={4} justifyContent="center">
                     {missionCards.map((service, index) => (
                         <Grid item xs={12} md={6} lg={4} key={index}>
-                            <Card sx={{ boxShadow: 3, p: 2, height: '100%', backgroundColor: '#4a1e3d', color: 'white'}}>
+                            <Card sx={{ boxShadow: 3, p: 2, height: '100%', backgroundColor: '#f9f9f9', color: '#111827'}}>
                                 <CardContent>
                                     <Typography variant="h5" sx={{ fontWeight: 'bold' }} gutterBottom>
                                         {service.name}
@@ -146,7 +146,7 @@ const About = () => {
             
 
                                     {/* Testimonial Section */}
-                                    <Typography variant="body2"  sx={{ mt: 2, fontStyle: 'italic' }}>
+                                    <Typography variant="body2"  >
                                         {service.testimonial}
                                     </Typography>
 
@@ -160,13 +160,13 @@ const About = () => {
 
             {/* Vision Section */}
             <Box sx={{backgroundColor: '#f9f9f9' }}>
-                <Typography variant="h4" align="center" gutterBottom color='#4a1e3d' fontWeight='bold'>
+                <Typography variant="h4" align="center" gutterBottom color='#111827' fontWeight='bold'>
                     Our Vision
                 </Typography>
                 <Grid container spacing={4} justifyContent="center">
                     {visionCards.map((service, index) => (
                         <Grid item xs={12} md={6} lg={4} key={index}>
-                            <Card sx={{ boxShadow: 3, p: 2, height: '100%' , backgroundColor: '#4a1e3d', color: 'white' }}>
+                            <Card sx={{ boxShadow: 3, p: 2, height: '100%' , backgroundColor: '#f9f9f9', color: '#111827' }}>
                                 <CardContent>
                                     <Typography variant="h5" sx={{ fontWeight: 'bold' }} gutterBottom>
                                         {service.name}
@@ -178,7 +178,7 @@ const About = () => {
                                    
 
                                     {/* Testimonial Section */}
-                                    <Typography variant="body2" sx={{ mt: 2, fontStyle: 'italic' }}>
+                                    <Typography variant="body2" >
                                         {service.testimonial}
                                     </Typography>
 

@@ -6,7 +6,7 @@ import { Email, Phone, LocationOn } from '@mui/icons-material';
 
 const Contact = () => {
     return (
-        <Container sx={{ py: 8, backgroundColor: '#f9f9f9' }}>
+        <Container sx={{ py:2, backgroundColor: '#f9f9f9' }}>
             <Typography variant="h4" align="center" gutterBottom>
                 Contact Us
             </Typography>
@@ -83,8 +83,8 @@ const Contact = () => {
                                         <LocationOn color="primary" />
                                     </ListItemIcon>
                                     <ListItemText
-                                        primary="6kilo FBE, Addis Ababa, Ethiopia"
-                                        secondary="Our currect team location"
+                                        primary="6kilo, Addis Ababa, Ethiopia"
+                                       
                                     />
                                 </ListItem>
                                 <ListItem>
