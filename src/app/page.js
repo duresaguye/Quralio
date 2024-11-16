@@ -32,7 +32,7 @@ export default function HomePage() {
             with one transformative idea
           </h1>
           <p className="text-3xl md:text-5xl font-bold text-white text-center mb-8 relative z-10">
-            Plastic as Money
+            Plastic as Money!
           </p>
           
           <button 
