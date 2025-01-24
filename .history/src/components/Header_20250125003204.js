@@ -1,4 +1,5 @@
-"use client"  
+// components/Header.js
+"use client";
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -57,7 +58,7 @@ export default function Header() {
               </div>
             )}
           </div>
-          <a href="/signup" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-200">
+          <a href="/signup" className="bg-blue-600 px-4 py-2 rounded-md hover:bg-blue-700 transition duration-200">
             Sign Up
           </a>
           <a href="/login" className="text-gray-800 hover:text-gray-700 transition duration-200">

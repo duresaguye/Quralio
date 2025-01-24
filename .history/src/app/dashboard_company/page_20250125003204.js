@@ -121,7 +121,7 @@ const Dashboard = () => {
         <div className="min-h-screen bg-gray-100 flex">
             {/* Sidebar */}
             <div
-                className="bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-md p-4 relative "
+                className="bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-md p-4 relative mt-16"
                 style={{ width: `${sidebarWidth}px`, transition: 'width 0.2s' }}
             >
                 <h2 className="text-2xl font-bold mb-4 text-center">Dashboard Menu</h2>

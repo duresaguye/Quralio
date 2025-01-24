@@ -53,7 +53,68 @@ const visionCards = [
     }
 ];
 
-
+const teamMembers = [
+    {
+        name: 'Duresa Guye',
+        role: 'Co-Founder & CEO',
+        image: '/assets/dure_photo.jpg',
+        responsibilities: [
+            'Leads company vision, strategy, and decision-making.',
+            'Acts as the spokesperson, drives investor relations, and connects with stakeholders.',
+            'Works closely with other team members to align on goals and objectives.'
+        ]
+    },
+    {
+        name: 'Alpha Lencho',
+        role: 'Co-founder & COO',
+        image: '/assets/alpha_photo.jpg',
+        responsibilities: [
+            'Oversees daily operations, project management, and processes.',
+            'Ensures smooth execution of internal activities and coordinates between teams.',
+            'Handles HR functions (team culture, hiring, performance) if no dedicated HR role exists.'
+        ]
+    },
+    {
+        name: 'Tolosa Diriba',
+        role: 'CTO',
+        image: '/assets/tolosa_photo.jpg',
+        responsibilities: [
+            'Leads product development, technology choices, and technical strategy.',
+            'Manages engineering tasks, codebase, and technical problem-solving.',
+            'Coordinates with Product/Design for product development.'
+        ]
+    },
+    {
+        name: 'Ruth Adane',
+        role: 'Product Manager / UX/UI Designer',
+        image: '/assets/ruth_photo.jpg',
+        responsibilities: [
+            'Defines product roadmap, feature prioritization, and user journey.',
+            'Focuses on customer feedback, user experience, and interface design.',
+            'Works with the CTO and developers to turn product vision into reality.'
+        ]
+    },
+    {
+        name: 'Hilina Adane',
+        role: 'Marketing and Growth Lead',
+        image: '/assets/hilina_photo.jpg',
+        responsibilities: [
+            'Drives brand building, marketing campaigns, and customer acquisition.',
+            'Manages digital presence (social media, content, ads) and community engagement.',
+            'Gathers customer insights to support product and business strategies.'
+        ]
+    },
+    {
+        name: 'Mohammed Ahmed',
+        role: 'Finance & Customer Success Lead',
+        image: '/assets/mohammed_photo.jpg',
+        responsibilities: [
+            'Manages finances, budgets, and any fundraising activities.',
+            'Handles customer support, onboarding, and relationship management to ensure user satisfaction.',
+            'Collects feedback and works with the Product Manager to improve the customer journey.'
+        ]
+    }
+];
 
 const About = () => {
     const [openIndex, setOpenIndex] = useState(null);
@@ -137,7 +198,50 @@ const About = () => {
                 <Typography variant="body1" align="center" paragraph sx={{ mb: 4 }}>
                     We are a dedicated team committed to solving the challenges of recycling materials.
                 </Typography>
-               
+                <Grid container spacing={4} justifyContent="center">
+                    {teamMembers.map((member, index) => (
+                        <Grid item xs={12} sm={6} md={4} key={index}>
+                            <Paper elevation={3} sx={{ p: 2, borderRadius: '8px', textAlign: 'center' }}>
+                                <CardMedia
+                                    component="img"
+                                    alt={member.name}
+                                    height="200"
+                                    image={member.image}
+                                    sx={{ objectFit: 'cover', borderRadius: '8px' }}
+                                />
+                                <Box sx={{ p: 2 }}>
+                                    <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                                        {member.name}
+                                    </Typography>
+                                    <Typography variant="body2" color="textSecondary">
+                                        {member.role}
+                                    </Typography>
+                                </Box>
+                                <Button onClick={() => handleToggle(index)} sx={{ width: '100%' }}>
+                                    {openIndex === index ? 'Hide Responsibilities' : 'View Responsibilities'}
+                                </Button>
+                                <Collapse in={openIndex === index}>
+                                    <Box sx={{ mt: 2 }}>
+                                        {member.responsibilities.map((responsibility, idx) => (
+                                            <Box
+                                                key={idx}
+                                                sx={{
+                                                    backgroundColor: '#f1f8e9',
+                                                    padding: '10px',
+                                                    marginBottom: '8px',
+                                                    borderRadius: '4px',
+                                                    boxShadow: 2,
+                                                }}
+                                            >
+                                                <Typography variant="body2">{responsibility}</Typography>
+                                            </Box>
+                                        ))}
+                                    </Box>
+                                </Collapse>
+                            </Paper>
+                        </Grid>
+                    ))}
+                </Grid>
             </Box>
         </Container>
     );

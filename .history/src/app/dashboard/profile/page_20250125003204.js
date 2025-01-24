@@ -1,4 +1,4 @@
-"use client";
+// src/app/dashboard/ProfileUpdate.js
 
 import { useState } from "react";
 

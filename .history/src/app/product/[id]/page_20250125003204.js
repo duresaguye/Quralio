@@ -1,4 +1,4 @@
-"use client";
+// src/app/products/[id]/page.js
 import { useRouter } from 'next/router';
 
 export default function ProductPage() {

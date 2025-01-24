@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-100 ">
+    <div className="flex min-h-screen bg-gray-100 mt-16">
       {/* Sidebar */}
       <aside
         className={`${

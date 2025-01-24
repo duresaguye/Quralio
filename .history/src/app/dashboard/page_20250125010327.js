@@ -33,7 +33,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className=" min-h-screen bg-gray-100">
+    <div className="flex min-h-screen bg-gray-100">
       <div className="">
         <h3 className="text-2xl font-bold mb-6">Dashboard</h3>
 

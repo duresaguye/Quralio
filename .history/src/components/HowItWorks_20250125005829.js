@@ -41,7 +41,7 @@ const recyclingCompanySteps = [
         ))}
     <Link href="/dashboard">
     <div className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 text-center cursor-pointer">
-      check out  Plastic waste Producers Dashboard
+      Go to  Plastic waste Producers Dashboard
     </div>
   </Link>
       </div>
@@ -60,7 +60,7 @@ const recyclingCompanySteps = [
         ))}
            <Link href="/dashboard_company">
     <div className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 text-center cursor-pointer">
-      check out  Recycling Companies Dashboard
+      Go to  Plastic waste Producers Dashboard
     </div>
   </Link>
       </div>
