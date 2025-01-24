@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client';
 
 import { useEffect, useRef } from 'react';
@@ -31,7 +32,7 @@ export default function Testimonials() {
     },
     {
       name: "Rita Garcia",
-      text: "I love the concept of using plastic as money! It's eco-friendly and practical.",
+      text: "I love the concept of using plastic as money! It is eco-friendly and practical.",
     },
     {
       name: "Samuel Lee",

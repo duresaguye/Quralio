@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client';
 
 import React from 'react';
@@ -108,7 +109,7 @@ const ServicePage = () => {
 
                     <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>How can I get started with a service?</Typography>
                     <Typography variant="body2" color="textSecondary" paragraph>
-                        Each service has a &quot;"Learn More"&quot;  or &quot;"Get Started"&quot;  button. Simply click to explore or begin.
+                        Each service has a &quot;Learn More&quot; or &quot;Get Started&quot; button. Simply click to explore or begin.
                     </Typography>
                 </Box>
             </Box>
