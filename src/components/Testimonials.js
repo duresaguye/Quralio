@@ -27,7 +27,7 @@ export default function Testimonials() {
   const testimonials = [
     {
       name: "Alex Johnson",
-      text: "This platform has completely changed how I handle waste. Truly a game-changer!",
+      text: "This platform has completely changed how I handle waste. Truly a game changer!",
     },
     {
       name: "Rita Garcia",
@@ -39,7 +39,7 @@ export default function Testimonials() {
     },
     {
       name: "Nina Patel",
-      text: "I've learned so much about recycling and making a difference thanks to this platform.",
+      text: "I have learned so much about recycling and making a difference thanks to this platform.",
     },
   ];
 

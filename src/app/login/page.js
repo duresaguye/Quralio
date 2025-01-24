@@ -63,7 +63,7 @@ const Login = () => {
                     >
                         Login
                     </button>
-                    <p className="mt-4 text-gray-300">Don't have an account?</p>
+                    <p className="mt-4 text-gray-300">Don&apos;t have an account?</p>
                     <button
                         onClick={() => router.push('/signup')}
                         className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 w-full transition duration-300"

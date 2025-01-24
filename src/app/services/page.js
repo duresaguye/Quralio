@@ -97,18 +97,18 @@ const ServicePage = () => {
                     Frequently Asked Questions
                 </Typography>
                 <Typography variant="body2" align="center" color="textSecondary" paragraph>
-                    Have questions about our services? We’ve got answers.
+                    Have questions about our services? We have got answers.
                 </Typography>
                 {/* Example FAQ Content */}
                 <Box sx={{ mt: 4 }}>
-                    <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>What is Quralio’s primary service?</Typography>
+                    <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>What is Quralio&apos;s primary service?</Typography>
                     <Typography variant="body2" color="textSecondary" paragraph>
                         Our primary service is providing comprehensive solutions for recycling and waste management tailored to modern needs.
                     </Typography>
 
                     <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>How can I get started with a service?</Typography>
                     <Typography variant="body2" color="textSecondary" paragraph>
-                        Each service has a "Learn More" or "Get Started" button. Simply click to explore or begin.
+                        Each service has a &quot;"Learn More"&quot;  or &quot;"Get Started"&quot;  button. Simply click to explore or begin.
                     </Typography>
                 </Box>
             </Box>
