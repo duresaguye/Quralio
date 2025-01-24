@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+
+# Quralio
+
+**Quralio** is an innovative platform planned to revolutionize plastic waste management by centralizing operations and enabling efficient collection with a single click. This project aims to streamline the recycling process, reduce environmental impact, and promote sustainable practices.
+
+## Current Status
+
+For now, **Quralio** is just a **frontend** application built using **Next.js**. The backend and other functionalities will be developed in the future.
+
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+- [Future Plans](#future-plans)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Features
+
+- **Responsive Design**: Ensures usability across devices.
+- **Next.js Framework**: Server-side rendering and static site generation for optimal performance.
+- **Scalable Frontend**: Ready to integrate with backend services in the future.
+
+## Technologies Used
+
+- Next.js: A React framework for server-side rendering and static site generation.
+- Tailwind CSS: A utility-first CSS framework for fast and consistent UI styling.
 
 ## Getting Started
 
-First, run the development server:
+Follow the instructions below to set up and run the frontend locally.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js (v14.x or later)
+- npm (v6.x or later) or Yarn
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repository:
 
-## Learn More
+   ```bash
+   git clone https://github.com/duresaguye/Quralio.git
+   cd Quralio
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Install dependencies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   Or, if using Yarn:
 
-## Deploy on Vercel
+   ```bash
+   yarn install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Running the Application
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+   Or, if using Yarn:
+
+   ```bash
+   yarn dev
+   ```
+
+2. Access the application at [http://localhost:3000](http://localhost:3000).
+
+## Future Plans
+
+- Add backend support for user authentication and data management.
+- Implement APIs for scheduling and tracking plastic waste collection.
+- Develop an admin dashboard for monitoring and analytics.
+- Introduce machine learning models for optimizing collection routes.
+
+## Contributing
+
+Contributions are welcome to enhance Quralio! To contribute:
+
+1. Fork the repository.
+2. Create a new branch:
+
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+
+3. Make your changes and commit them:
+
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+
+4. Push to the branch:
+
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+
+5. Open a Pull Request.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
