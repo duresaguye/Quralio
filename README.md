@@ -56,11 +56,6 @@ Follow the instructions below to set up and run the frontend locally.
    npm install
    ```
 
-   Or, if using Yarn:
-
-   ```bash
-   yarn install
-   ```
 
 ### Running the Application
 
@@ -78,12 +73,7 @@ Follow the instructions below to set up and run the frontend locally.
 
 2. Access the application at [http://localhost:3000](http://localhost:3000).
 
-## Future Plans
 
-- Add backend support for user authentication and data management.
-- Implement APIs for scheduling and tracking plastic waste collection.
-- Develop an admin dashboard for monitoring and analytics.
-- Introduce machine learning models for optimizing collection routes.
 
 ## Contributing
 
